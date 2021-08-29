@@ -1,12 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your local weather</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    >
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-sm">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-6">
+                <h5 class="card-title">Weather <span id=h5-city></span></h5>
+              </div>
+              <div class="col-6">
+                <form id="city-form">
+                  <div class="form-group col-5">
+                    <input
+                      type="text"
+                      placeholder="change city"
+                      autofocus="on"
+                      autocomplete="off"
+                      id="change-city"
+                      class="form-control shadow-sm"
+                    />
+                  </div>
+                  
+                  <div class="col-4"><input type="submit" value="go" id="go" /></div>
+                  <div class="col-4">
+                    <button class="btn btn-success" id="current-location-button" >Here</button></div>
+                 
+                  
+                </form>
+              </div>
+
+              <div class="col-2">
+                <img src="images/sun.png" alt="sun" class="bigWeatherSymbol" />
+              </div>
+              <div class="col-4">
+                <p class="degrees">
+                  <span id="degrees">  </span>
+                  <span class="units"
+                    ><a href="#" id="celsius">°C</a> |
+                    <a href="#" id="fahrenheit">°F</a></span
+                  >
+                </p>
+
+                <p id="currentTime"></p>
+                <p></p>
+              </div>
+              <div class="col-5">
+                <p> <span id=description>  </span><br /> humidity: <span id=humidity></span>%</span><br />wind: <span id=wind></span> km/h</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row changeTime">
+        <div class="col-2">
+          <button type="submit" class="btn btn-primary">today</button>
+        </div>
+        <div class="col-2">
+          <button type="submit" class="btn btn-primary">next 5 days</button>
+        </div>
+        <div class="col-2">
+          <button type="submit" class="btn btn-primary">weekend</button>
+        </div>
+      </div>
+      <div class="row nextDays">
+        <div class="col-sm day">
+          <img src="images/sun.png" alt="sunny" class="weatherSymbol" />
+          <br />
+          Mon
+          <br />
+          17°C
+          <br />
+          13°C
+        </div>
+        <div class="col-sm day">
+          <img src="images/rain.png" alt="rainy" class="weatherSymbol" />
+          <br />
+          Tue
+          <br />
+          20°C
+          <br />
+          14°C
+        </div>
+        <div class="col-sm day">
+          <img src="images/rain.png" alt="rainy" class="weatherSymbol" />
+          <br />
+          Wed
+          <br />
+          16°C
+          <br />
+          10°C
+        </div>
+        <div class="col-sm day">
+          <img src="images/cloudy.jpg" alt="cloudy" class="weatherSymbol" />
+          <br />
+          Thu
+          <br />
+          25°C
+          <br />
+          21°C
+        </div>
+        <div class="col-sm day">
+          <img src="images/sun.png" alt="sunny" class="weatherSymbol" />
+          <br />
+          Fri
+          <br />
+          15°C
+          <br />
+          10°C
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
 </html>
